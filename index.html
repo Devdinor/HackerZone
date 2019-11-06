@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hacker zone</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+</head>
+<body style="background-color: black;color: white;">
+<div class="container-fluid">
+<nav style="background-color: black; color: white" class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Hacker Zone</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Python</a></li>
+      <li><a href="#">C++</a></li>
+      <li><a href="#">C</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
+<h1>welcome to underground</h1>
+<div class="row">
+    <div class="col-sm-8">
+    	<h2 style="color: red;">socket python</h2>
+    	<p> <h3>server.py</h3>
+<style type="text/css">
+span {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: white;
+}
+.sc0 {
+}
+</style>
+<div style="width: 100%;float: left; white-space: pre; line-height: 1;color: white; ">
+<span class="sc0">import socket
+
+HOST = '127.0.0.1'  # Alamat standar (localhost)
+PORT = 65431        # Port untuk didengarkan (port non-privilege adalah > 1023)
+
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.bind((HOST, PORT))
+    s.listen()
+    conn, addr = s.accept()
+    with conn:
+        print('Terhubung dengan', addr)
+        while True:
+            data = conn.recv(1024)
+            if not data:
+                break
+            conn.sendall(data)
+</span></div>
+</p><br>
+
+<p> Client Side <br>
+	<h3>client.py</h3>
+<div style="width: 100%;float: left; white-space: pre; line-height: 1;"><span class="sc0">#!/usr/bin/env python3
+
+import socket
+
+HOST = '127.0.0.1'  # localhost nama server
+PORT = 65431        # port yang dipake di server
+
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.connect((HOST, PORT))
+    s.sendall(b'Hello, world')
+    data = s.recv(1024)
+
+print('Received', repr(data))
+</span></div></body>
+</p>
+    </div>
+    <div class="col-sm-3">
+    	<h2>Navbar Vertical</h2>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>
